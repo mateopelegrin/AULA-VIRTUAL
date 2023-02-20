@@ -9,7 +9,7 @@ function promediar() {
         alert("Usted aprobó, felicitaciones! :D")
     }
     else{
-        alert("Usted desaprobó :(")
+        alert("Usted desaprobó D:")
     }
 }
 
