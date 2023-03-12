@@ -42,7 +42,7 @@ class Verduleria {
             for (let i = 0; i < catalogo.length; i++) {
                 catalogoMensaje += `${i + 1}. ${catalogo[i].nombre} - $${catalogo[i].precio}\n`;
             }
-            alert(catalogoMensaje); // Nuevo alert con el catálogo de productos
+            alert(catalogoMensaje);
             const opcion = parseInt(prompt('Ingrese el número del producto que desea agregar, o 0 para terminar.'));
             if (opcion === 0) {
                 seguirAgregando = false;
