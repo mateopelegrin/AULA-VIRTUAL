@@ -6,13 +6,11 @@ class Producto {
     }
 }
 
-
 const catalogo = [
-    { nombre: 'Lechuga', precio: 10 },
-    { nombre: 'Tomate', precio: 15 },
-    { nombre: 'Papa', precio: 8 },
-    { nombre: 'Zanahoria', precio: 12 },
-    { nombre: 'Cebolla', precio: 7 },
+    { nombre: 'Manzanas', precio: 2.5 },
+    { nombre: 'Peras', precio: 3 },
+    { nombre: 'Naranjas', precio: 4 },
+    { nombre: 'Bananas', precio: 1.5 },
 ];
 
 class Verduleria {
@@ -21,28 +19,30 @@ class Verduleria {
     }
 
     agregarProducto(producto) {
-        this.productos.push(producto);
-    }
-
-    eliminarProducto(nombre) {
-        this.productos = this.productos.filter((producto) => producto.nombre !== nombre);
+        const index = this.productos.findIndex(p => p.nombre === producto.nombre);
+        if (index !== -1) {
+            this.productos[index].cantidad += producto.cantidad;
+        } else {
+            this.productos.push(producto);
+        }
     }
 
     calcularPrecioTotal() {
-        let precioTotal = 0;
+        let total = 0;
         for (let producto of this.productos) {
-            precioTotal += producto.cantidad * producto.precio;
+            total += producto.cantidad * producto.precio;
         }
-        return precioTotal;
+        return total;
     }
 
     agregarProductosDelCatalogo() {
         let seguirAgregando = true;
         while (seguirAgregando) {
-            console.log('Este es nuestro catálogo de productos:');
+            let catalogoMensaje = 'Este es nuestro catálogo de productos:\n\n';
             for (let i = 0; i < catalogo.length; i++) {
-                console.log(`${i + 1}. ${catalogo[i].nombre} - $${catalogo[i].precio}`);
+                catalogoMensaje += `${i + 1}. ${catalogo[i].nombre} - $${catalogo[i].precio}\n`;
             }
+            alert(catalogoMensaje); // Nuevo alert con el catálogo de productos
             const opcion = parseInt(prompt('Ingrese el número del producto que desea agregar, o 0 para terminar.'));
             if (opcion === 0) {
                 seguirAgregando = false;
@@ -51,20 +51,21 @@ class Verduleria {
                 const cantidad = parseInt(prompt(`Cuántas ${productoElegido.nombre} desea agregar?`));
                 const producto = new Producto(productoElegido.nombre, cantidad, productoElegido.precio);
                 this.agregarProducto(producto);
-                console.log(`Se agregaron ${cantidad} ${productoElegido.nombre} a la verdulería.`);
+                alert(`Se agregaron ${cantidad} ${productoElegido.nombre} a la verdulería.`);
             } else {
-                console.log('Opción inválida, por favor intente nuevamente.');
+                alert('Opción inválida, por favor intente nuevamente.');
             }
         }
     }
 }
 
-
 const verduleria = new Verduleria();
 verduleria.agregarProductosDelCatalogo();
 
-console.log('Los productos en su carrito son:');
+let carritoMensaje = 'Los productos en su carrito son:\n\n';
 for (let producto of verduleria.productos) {
-    console.log(`${producto.cantidad} ${producto.nombre} - $${producto.cantidad * producto.precio}`);
+    carritoMensaje += `${producto.cantidad} ${producto.nombre} - $${producto.cantidad * producto.precio}\n`;
 }
-console.log(`El precio total es: $${verduleria.calcularPrecioTotal()}`);
+const precioTotalMensaje = `El precio total es: $${verduleria.calcularPrecioTotal()}`;
+
+alert(carritoMensaje + precioTotalMensaje);
