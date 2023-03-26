@@ -4,3 +4,18 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+
+ main{
+    margin: 5px;
+    
+ }
+h1, h2, p{
+    color: white;
+    -webkit-text-stroke: 1px;;
+}
+
+ul{
+    color: yellow;
+    -webkit-text-stroke: 1px;;
+}
