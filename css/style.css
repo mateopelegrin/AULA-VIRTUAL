@@ -1,21 +1,110 @@
+/* Estilos para el encabezado */
+header {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+/* Estilos para la lista de productos */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #00b894;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilos para el botón de agregar al carrito */
+.agregar-carrito {
+    background-color: #00b894;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.agregar-carrito:hover {
+    background-color: #009432;
+}
+
+/* Estilos para el carrito */
+#carrito {
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #00b894;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#carrito h2 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+#carrito ul {
+    margin-top: 10px;
+}
+
+#carrito li {
+    display: flex;
+    justify-content: space-between;
+}
+
+#carrito .eliminar-producto {
+    background-color: #c23616;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#carrito .eliminar-producto:hover {
+    background-color: #e74c3c;
+}
+
+/* Estilos para el botón de pagar */
+#pagar {
+    background-color: #00b894;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#pagar:hover {
+    background-color: #009432;
+}
+
+/* Estilos para el total a pagar */
+#total {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Estilos para la imagen de fondo */
 body {
-    background-image: url("../assets/fondoLibro.jpg");
+    background-image: url('../assets/fondoLibro.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
+    background-position: center center;
+    margin: 10px;
 }
 
-
- main{
-    margin: 5px;
-    
- }
-h1, h2, p{
+h2 {
     color: white;
-    -webkit-text-stroke: 1px;;
-}
-
-ul{
-    color: yellow;
-    -webkit-text-stroke: 1px;;
+    -webkit-text-stroke: 1px black;
 }
